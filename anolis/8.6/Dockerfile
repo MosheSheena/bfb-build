@@ -22,6 +22,7 @@ RUN rpm -ihv --force bootimages/mlxbf-bootimages-*.aarch64.rpm || true
 RUN echo 'excludepkgs=OpenIPMI' >> /etc/dnf/dnf.conf && \
     dnf -y clean all && \
     dnf install -y epel-release && \
+    dnf --exclude='mlxbf-bootimages*,kernel*' -y update && \
     dnf --exclude='mlxbf-bootimages*' -y install coreutils-single && \
     dnf --exclude='mlxbf-bootimages*,kernel*' -y install http://mirrors.openanolis.cn/anolis/8.6/BaseOS/aarch64/os/Packages/rasdaemon-0.6.1-12.0.2.an8.aarch64.rpm && \
     dnf -y install python3-dnf-plugin-versionlock && \
@@ -115,6 +116,7 @@ RUN echo 'excludepkgs=OpenIPMI' >> /etc/dnf/dnf.conf && \
         ${BMC_FW_PACKAGES} \
         ${CEC_FW_PACKAGES} \
     && \
+    dnf --disablerepo='*' --enablerepo='doca' --exclude='mlxbf-bootimages*' -y reinstall bf-release && \
     dnf -y clean all && \
     rm -rf /var/cache/* && \
     truncate -s0 /etc/machine-id && \
