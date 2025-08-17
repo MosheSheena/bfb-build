@@ -1,0 +1,32 @@
+####################  NOTE ##################################
+# THIS FILE IS A PLACEHOLDER FOR RedHat REPOSITORIES.
+#
+# Fill the file with repositories before building RHEL BFB
+#############################################################
+
+[RH-BaseOS]
+name=BaseOS (Partners Mirror)
+baseurl=http://rh-partners-sftp-mirror.nvidia.com/RHEL-9.6.0-GA/BaseOS/aarch64/os/
+enabled=1
+gpgcheck=1
+gpgkey=http://rh-partners-sftp-mirror.nvidia.com/RHEL-9.6.0-GA/gpg
+priority=15
+cost=15
+
+[RH-AppStream]
+name=AppStream (Partners Mirror)
+baseurl=http://rh-partners-sftp-mirror.nvidia.com/RHEL-9.6.0-GA/AppStream/aarch64/os/
+enabled=1
+gpgcheck=1
+gpgkey=http://rh-partners-sftp-mirror.nvidia.com/RHEL-9.6.0-GA/gpg
+priority=15
+cost=15
+
+[RH-CRB]
+name=CRB (Partners Mirror)
+baseurl=http://rh-partners-sftp-mirror.nvidia.com/RHEL-9.6.0-GA/CRB/aarch64/os/
+enabled=1
+gpgcheck=1
+gpgkey=http://rh-partners-sftp-mirror.nvidia.com/RHEL-9.6.0-GA/gpg
+priority=15
+cost=15
